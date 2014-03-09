@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>El Oh El Speak</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<ul id="timers" data-bind="foreach: timers">
+			<li class="timer">
+				<span class="title" data-bind="text: title"></span>
+				<div class="bar">
+					<span data-bind="text: (timeElapsed() / 1000).toFixed(1)"></span>
+					<progress data-bind="attr: {max: time, value: timeElapsed()}"></progress>
+					<span data-bind="text: (timeRemaining() / 1000).toFixed(1)"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script src="knockout-3.0.0.0.js"></script>
+	<script src="annyang.min.js"></script>
+	<script src="timerlibrary.js"></script>
+	<script src="timer.js"></script>
+</body>
+</html>
